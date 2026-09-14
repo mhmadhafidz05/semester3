@@ -7,7 +7,7 @@ class stack:
         print(f"{item} berhasil ditambahkan")
 
     def delete(self):
-        if len(self.data):
+        if len(self.data) == 0:
             print("data tidak ditemukan")
         else:
             item = self.data.pop()
@@ -24,7 +24,7 @@ class stack:
 
 stack = stack()
 
-stack.insert("yangmuliahafis")
+stack.insert("yangmuliahafis")  
 stack.insert("ismailbinmail")
 stack.insert("arifyutaka")
 
