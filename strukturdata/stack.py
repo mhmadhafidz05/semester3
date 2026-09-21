@@ -45,4 +45,4 @@ stack.searching("Andi")
 stack.delete()
 
 # Menampilkan stack setelah delete
-stack.display()
+stack.display() 
