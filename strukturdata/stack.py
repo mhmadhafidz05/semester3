@@ -15,10 +15,10 @@ class Stack:
             item = self.data.pop()
             print(f"{item} berhasil dihapus.")
 
-    # Searching data di dalam stack
     def searching(self, item):
         if item in self.data:
-            print(f"{item} ditemukan di dalam stack.")
+            indeks = self.data.index(item)
+            print(f"{item} ditemukan di dalam stack pada indeks ke-{indeks}.")
         else:
             print(f"{item} tidak ditemukan di dalam stack.")
 
@@ -29,20 +29,26 @@ class Stack:
 
 # Membuat object Stack
 stack = Stack()
-
+print("<==================================================================>")
 # Insert data
 stack.insert("Hafidz")
 stack.insert("Andi")
 stack.insert("Budi")
+stack.insert("Budi")
+print("<==================================================================>")
 
 # Menampilkan stack
 stack.display()
+print("<==================================================================>")
 
 # Searching
 stack.searching("Andi")
+stack.searching("Budi")
+print("<==================================================================>")
 
 # Delete
 stack.delete()
+print("<==================================================================>")
 
 # Menampilkan stack setelah delete
 stack.display() 

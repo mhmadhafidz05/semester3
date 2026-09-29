@@ -35,8 +35,3 @@ stack.searching("arifyutaka")
 stack.delete()
 
 stack.display()
-
-
-
-
-method insert apa" aja selain code insert
