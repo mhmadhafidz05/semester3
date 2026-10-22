@@ -8,76 +8,76 @@ class Node:
 
 
 class AVLTree:
-    # def __init__(self):
-    #     self.root = None
+    def __init__(self):
+        self.root = None
 
-    # # Mengambil tinggi node
-    # def height(self, node):
-    #     return node.height if node else 0
+    # Mengambil tinggi node
+    def height(self, node):
+        return node.height if node else 0
 
-    # # Menghitung Balance Factor
-    # def balance_factor(self, node):
-    #     if not node:
-    #         return 0
+    # Menghitung Balance Factor
+    def balance_factor(self, node):
+        if not node:
+            return 0
 
-    #     return self.height(node.left) - self.height(node.right)
+        return self.height(node.left) - self.height(node.right)
 
-    # # Memperbarui tinggi node
-    # def update_height(self, node):
-    #     node.height = 1 + max(
-    #         self.height(node.left),
-    #         self.height(node.right)
-    #     )
+    # Memperbarui tinggi node
+    def update_height(self, node):
+        node.height = 1 + max(
+            self.height(node.left),
+            self.height(node.right)
+        )
 
-    # # Rotasi kanan (LL)
-    # def right_rotate(self, z):
-    #     y = z.left
-    #     temp = y.right
+    # Rotasi kanan (LL)
+    def right_rotate(self, z):
+        y = z.left
+        temp = y.right
 
-    #     y.right = z
-    #     z.left = temp
+        y.right = z
+        z.left = temp
 
-    #     self.update_height(z)
-    #     self.update_height(y)
+        self.update_height(z)
+        self.update_height(y)
 
-    #     return y
+        return y
 
-    # # Rotasi kiri (RR)
-    # def left_rotate(self, z):
-    #     y = z.right
-    #     temp = y.left
+    # Rotasi kiri (RR)
+    def left_rotate(self, z):
+        y = z.right
+        temp = y.left
 
-    #     y.left = z
-    #     z.right = temp
+        y.left = z
+        z.right = temp
 
-    #     self.update_height(z)
-    #     self.update_height(y)
+        self.update_height(z)
+        self.update_height(y)
 
         return y
 
     # Menyeimbangkan AVL Tree
-    # def rebalance(self, node):
-    #     bf = self.balance_factor(node)
+    def rebalance(self, node):
+        bf = self.balance_factor(node)
 
-    #     # Left Heavy
-    #     if bf > 1:
-    #         if self.balance_factor(node.left) < 0:
-    #             print("Rotasi LR (Left-Right)")
-    #             node.left = self.left_rotate(node.left)
-    #         else:
-    #             print("Rotasi LL (Right Rotation)")
+        # Left Heavy
+        if bf > 1:
+            if self.balance_factor(node.left) < 0:
+                print("Rotasi LR (Left-Right)")
+                node.left = self.left_rotate(node.left)
+            else:
+                print("Rotasi LL (Right Rotation)")
 
-    #         return self.right_rotate(node)
+            return self.right_rotate(node)
 
-    #     # Right Heavy
-    #     if bf < -1:
-    #         if self.balance_factor(node.right) > 0:
-    #             print("Rotasi RL (Right-Left)")
-    #             node.right = self.right_rotate(node.right)
-    #         else:
-    #             print("Rotasi RR (Left Rotation)")
+        # Right Heavy
+        if bf < -1:
+            if self.balance_factor(node.right) > 0:
+                print("Rotasi RL (Right-Left)")
+                node.right = self.right_rotate(node.right)
+            else:
+                print("Rotasi RR (Left Rotation)")
 
-    #         return self.left_rotate(node)
+            return self.left_rotate(node)
 
         return node
 
