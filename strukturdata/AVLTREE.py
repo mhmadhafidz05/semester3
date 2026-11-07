@@ -102,7 +102,7 @@ class AVLTree:
         return self.rebalance(node)
 
     # MENCARI NILAI MINIMUM REKURSIF
-    def min_node(self, node):
+    def min_node(self, node):4
         if node.left is None:
             return node
 
